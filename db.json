@@ -1,3 +1,19 @@
 {
-  "books": []
+  "books": [
+    {
+      "id": "kULMnHic",
+      "title": "Javascript is a Game Changer",
+      "author": "Sam J. Macks"
+    },
+    {
+      "id": "0kHjIsx3",
+      "title": "Optimize your HTML",
+      "author": "Ken H. Patts"
+    },
+    {
+      "id": "ukJ8YfgW",
+      "title": "REST API Naming conventions",
+      "author": "Ivy C. Janes"
+    }
+  ]
 }
