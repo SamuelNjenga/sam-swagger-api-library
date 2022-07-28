@@ -170,6 +170,26 @@ router.put("/:id", (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /books/{id}:
+ *   delete:
+ *     summary: Remove the book by id
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The book id
+ * 
+ *     responses:
+ *       200:
+ *         description: The book was deleted
+ *       404:
+ *         description: The book was not found
+ */
 router.delete("/:id", (req, res) => {
   req.app.db.get("books").remove({ id: req.params.id }).write();
   res.sendStatus(200);
