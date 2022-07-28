@@ -28,6 +28,33 @@ const idLength = 8;
  *           author: Wesly S. Jefferson
  */
 
+// Create a tag
+/**
+ * @swagger
+ * tags:
+ *    name: Books
+ *    description: The books managing API
+ */
+
+// Routes
+
+/**
+ * @swagger
+ * /books:
+ *    get:
+ *     summary: Returns the list of all the books
+ *     tags: [Books]
+ *     responses:
+ *       200:
+ *         description: The list of the books
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                  $ref: '#/components/schemas/Book'
+ */
+
 router.get("/", (req, res) => {
   const books = req.app.db.get("books");
   res.send(books);
