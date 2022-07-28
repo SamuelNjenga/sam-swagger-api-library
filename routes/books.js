@@ -60,8 +60,34 @@ router.get("/", (req, res) => {
   res.send(books);
 });
 
+/**
+ * @swagger
+ * /books/{id}:
+ *    get:
+ *      summary: Get the book by id
+ *      tags: [Books]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *             type: string
+ *          required: true
+ *          description: The book id
+ *      responses:
+ *        200:
+ *          description: The book description by id
+ *          contents:
+ *            application/json:
+ *              schema:
+ *                 $ref: '#/components/schemas/Book'
+ *        404:
+ *           description: The book was not found
+ */
+
 router.get("/:id", (req, res) => {
   const book = req.app.db.get("books").find({ id: req.params.id }).value();
+  if (!book) res.sendStatus(404);
+
   res.send(book);
 });
 
