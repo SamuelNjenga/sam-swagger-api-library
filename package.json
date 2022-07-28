@@ -13,7 +13,7 @@
     "express": "^4.18.1",
     "lowdb": "^1.0.0",
     "morgan": "^1.10.0",
-    "nanoid": "^4.0.0",
+    "nanoid": "^3.3.4",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.5.0"
   }
